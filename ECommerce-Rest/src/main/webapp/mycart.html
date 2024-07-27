@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my cart</title>
+    
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/responsive.css">
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="ta-navbar-store">
+        <div class="ta-tab-nav-wrapper container-fluid">
+        <div class="ta-tabbar-head-wrapper">
+        <div class="ta-logo-catmix" >
+            <div class="ta-logowrapper">
+                <div class="ta-logostore">
+                    <a class="navbar-item ta-dH-logoFull" href="index.html">
+                        <img src="./img/logo-01.png">
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="ta-category-wrapper">
+            <div class="ta-cat-visible-wrapper">
+                <div class="ta-category-icon">
+                    <img src="./img/category.png">
+                </div>
+                <div class="ta-categoryname"><a href="*">Category</a></div>
+            </div>
+            <div class="ta-head-cat-hov">
+                <div class="ta-head-cat-only">
+                            <div class="ta-head-cat-list">
+                                <a class="ta-filterCategory" href="#">
+                                    <div class="ta-head-cat-nlist">Men's Fashion</div>
+                                </a>
+        
+                                    <div class="ta-head-cathover">
+                                            <a class="ta-filterCategory">
+                                                <div class="ta-head-scat-list">
+                                                    <div class="ta-head-hovtext ta-category-nlist">SweetShirt &amp; Hoddies</div>
+                                                </div>
+                                            </a>
+                                    </div>
+                            </div>
+                            <div class="ta-head-cat-list">
+                                <a class="ta-filterCategory" href="#">
+                                    <div class="ta-head-cat-nlist">Electronics</div>
+                                </a>
+                            </div>
+                            <div class="ta-head-cat-list">
+                                <a class="ta-filterCategory" href="#">
+                                    <div class="ta-head-cat-nlist">Women's Fashion</div>
+                                </a>
+        
+                                    <div class="ta-head-cathover">
+        
+                                            <a class="ta-filterCategory" href="#">
+                                                <div class="ta-head-scat-list">
+                                                    <div class="ta-head-hovtext ta-category-nlist">Coats &amp; Jackets</div>
+                                                </div>
+                                            </a>
+                                            <a class="ta-filterCategory" href="#">
+                                                <div class="ta-head-scat-list">
+                                                    <div class="ta-head-hovtext ta-category-nlist">Beauty And Fragrance</div>
+                                                </div>
+                                            </a>
+                                    </div>
+                            </div>
+                </div>
+            </div>       
+        </div>
+        
+        <div class="ta-navbar-search">
+        
+        <div class="ta-searchbar">
+            <div class="ta-textplace">
+                <input type="search" placeholder="Search Products..">
+            </div>
+            <div class="ta-searchbox-icon"><i class="fas fa-search"></i></div>
+        </div>
+        </div>
+        
+        <div class="ta-cart-wish-mix">
+        
+        <div class="ta-shopping-purchase">
+        <div class="ta-cartwishbox"> <div class="ta-carthov-design">
+                                <div class="ta-cartwishbox">
+                                    <a href="mycart.html">
+                                        <div class="ta-wishlist"><span>(0)</span>My Cart</div>
+                                        <div class="ta-wishicon">
+                                            <img src="./img/shopping.png">
+                                        </div>
+                                        <div class="ta-cartnumber" data-count="0" style="display:none" id="cartNumber">0</div>
+                                    </a>
+                                </div>
+                            </div>
+</div>
+        </div>
+        
+        <div class="ta-login-register" id="advancelogin">
+            <div class="ta-loginmaster">
+                    <a href="#">
+                        <div class="ta-login">LOGIN</div>
+                    </a>
+                </div>
+                <div class="ta-login-user">
+                    <div class="ta-tab-loginbox">
+                        <img src="img/avatar.png">
+                    </div>
+                </div>
+            </div>
+        <div class="ta-fhamburger-parent">
+        <div class="fhamburger"></div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </nav>
+        </header>
+            <section class="ta-my-cart">
+                <div class="container-fluid">
+                    <div class="ta-my-cart-wrapper">
+                        <div class="ta-my-cart-item">
+                            <div class="ta-my-cart-img">
+                                <img src="./image/product/6d49bd1eb4baf6161f882b256371162c.jpg_400x400q75-product.jpg_.jpg">
+                            </div>
+                            <div class="ta-pBody">
+                                <div class="pName">Men Striped Polo Neck Cotton Blend Multicolor T-Shirt</div>
+                                <div class="pCat">Cloth</div>
+                                <div class="pQty"><span>Quantity:</span></div>
+                                <div class="pPrice"><span>Rs.</span> 2000</div>
+                            </div>
+                            <div class="my-remove">
+                                <i class="fa-solid fa-trash"></i>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="checkOut-wrapper">
+                        <div class="checkOut-total"><span>Total:</span> <span id="totalAmtInCart"></span></div>
+                        <div class="checkOut-btn">
+                            <a href="Checkout.html">
+                                <div class="checkOut-btn-wrapper">
+                                    Check Out
+                                </div>
+                            </a>
+                           
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+        <footer>
+            <div class="ta-my-e-commerce container-fluid">
+            <div class="ta-myfooter-wrapper">
+            <div class="ta-quicklinks">
+            <div class="ta-quick-title-wrapper">
+            <div class="ta-quick-title">Customer Care</div>
+            </div>
+            
+            <div class="ta-quicklinks-details">
+            <div class="ta-quick-lists">
+            <div class="ta-listtext"><a>Help Center</a></div>
+            </div>
+            
+            <div class="ta-quick-lists">
+            <div class="ta-listtext"><a>How to Buy</a></div>
+            </div>
+            
+            <div class="ta-quick-lists">
+            <div class="ta-listtext"><a>Returns &amp; Refunds</a></div>
+            </div>
+            
+            <div class="ta-quick-lists">
+            <div class="ta-listtext"><a>Code of Conduct</a></div>
+            </div>
+            
+            <div class="ta-quick-lists">
+            <div class="ta-listtext"><a>Digital Payments</a></div>
+            </div>
+            
+            <div class="ta-quick-lists">
+            <div class="ta-listtext"><a>Shipping Policies</a></div>
+            </div>
+            </div>
+            </div>
+            
+            <div class="ta-quicklinks">
+            <div class="ta-quick-title-wrapper">
+            <div class="ta-quick-title">Quicklinks</div>
+            </div>
+            
+            <div class="ta-quicklinks-details">
+            <div class="ta-quick-lists">
+            <div class="ta-listtext"><a>New Arrivals</a></div>
+            </div>
+            
+            <div class="ta-quick-lists">
+            <div class="ta-listtext"><a>Best Selling Items</a></div>
+            </div>
+            
+            <div class="ta-quick-lists">
+            <div class="ta-listtext"><a>Flash Sale</a></div>
+            </div>
+            
+            <div class="ta-quick-lists">
+            <div class="ta-listtext"><a>Fashion &amp; Styles</a></div>
+            </div>
+            
+            <div class="ta-quick-lists">
+            <div class="ta-listtext"><a>Mobiles &amp; Laptops</a></div>
+            </div>
+            
+            <div class="ta-quick-lists">
+            <div class="ta-listtext ta-footer-link"><a href="/vendor-register/">Vendor Register</a></div>
+            </div>
+            </div>
+            </div>
+            
+            <div class="ta-quicklinks">
+            <div class="ta-quick-title-wrapper">
+            <div class="ta-quick-title">About</div>
+            </div>
+            
+            <div class="ta-quicklinks-details">
+            <div class="ta-quick-lists">
+            <div class="ta-listtext"><a>About Us</a></div>
+            </div>
+            
+            <div class="ta-quick-lists">
+            <div class="ta-listtext"><a>Payment Option</a></div>
+            </div>
+            
+            <div class="ta-quick-lists">
+            <div class="ta-listtext"><a>Career</a></div>
+            </div>
+            
+            <div class="ta-quick-lists">
+            <div class="ta-listtext"><a>Policies &amp; Rules</a></div>
+            </div>
+            
+            <div class="ta-quick-lists">
+            <div class="ta-listtext"><a>Contact Us</a></div>
+            </div>
+            
+            <div class="ta-quick-lists">
+            <div class="ta-listtext"><a>Service Center</a></div>
+            </div>
+            </div>
+            </div>
+            
+            <div class="ta-quicklinks">
+            <div class="ta-quick-title-wrapper">
+            <div class="ta-quick-title">Contact Us</div>
+            </div>
+            
+            <div class="ta-quicklinks-details">
+            <div class="ta-quick-address"><i class="fas fa-map-marker-alt"></i>Tokyo, Japan</div>
+            
+            <div class="ta-quick-address"><i class="fas fa-phone-alt"></i> +977-9864221030</div>
+            
+            <div class="ta-quick-address"><i class="fas fa-envelope"></i> info@mukesh.com</div>
+            </div>
+            
+            <div class="ta-social-sites">
+            <div class="ta-socials-sites-all"><i class="fab fa-facebook-f"></i></div>
+            
+            <div class="ta-socials-sites-all"><i class="fab fa-instagram"></i></div>
+            
+            <div class="ta-socials-sites-all"><i class="fab fa-twitter"></i></div>
+            </div>
+            </div>
+            </div>
+            
+            <div class="ta-copyright-section">
+            <div class="ta-left-all-copyright">
+            <div class="ta-copyright-left">Company Name Copyright <i class="fas fa-copyright"></i> 2024. All Right Reserved.</div>
+            </div>
+            
+            <div class="ta-we-accept">
+            <div class="ta-accept-photo"><img src="./image/payment/cashon.png" /></div>
+            
+            <div class="ta-accept-photo"><img src="./image/payment/E sewa.png" /></div>
+            
+            <div class="ta-accept-photo"><img src="./image/payment/Khalti-logo-1-1024x571.jpg" /></div>
+            
+            <div class="ta-accept-photo"><img src="./image/payment/imepay.jpg" /></div>
+            
+            <div class="ta-accept-photo"><img src="./image/payment/Visa-Logo-2000-2006.png" /></div>
+            
+            <div class="ta-accept-photo"><img src="./image/payment/Mastercard-1200x600.jpg" /></div>
+            </div>
+            </div>
+            </div>
+            </footer>
+    
+        <script src="https://kit.fontawesome.com/47d2c2e237.js" crossorigin="anonymous"></script>
+         <script src="getcartItem.js"></script>
+</body>
+</html>

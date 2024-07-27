@@ -1,6 +1,11 @@
 com\mukesh\ecommerce\rest\TestService$Product.class
-com\mukesh\ecommerce\rest\ProductService$Product.class
+com\mukesh\ecommerce\rest\ProductService.class
+com\mukesh\ecommerce\rest\CheckoutService$CreatePaymentItem.class
+com\mukesh\ecommerce\rest\CheckoutService.class
+com\mukesh\ecommerce\rest\JakartaRestConfiguration.class
+com\mukesh\ecommerce\rest\CheckoutService$CreatePaymentResponse.class
 com\mukesh\ecommerce\rest\resources\JakartaEE10Resource.class
 com\mukesh\ecommerce\rest\TestService.class
-com\mukesh\ecommerce\rest\ProductService.class
-com\mukesh\ecommerce\rest\JakartaRestConfiguration.class
+com\mukesh\ecommerce\rest\Server.class
+com\mukesh\ecommerce\rest\PaymentService.class
+com\mukesh\ecommerce\rest\CheckoutService$CreatePayment.class

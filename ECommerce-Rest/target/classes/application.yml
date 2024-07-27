@@ -1,0 +1,5 @@
+server:
+    port:
+        
+STRIPE_SECRET_KEY: sk_test_51PbjF8RtI4hY7Ggt7bkJa0fueWF3mlQ1mqGFG1NMew7hhpvwQW9Sxy5VlqyudvUTCbf7KEakQyQMMLyh2igjHVjv00NyBSAozm
+STRIPE_PUBLIC_KEY: pk_test_51PbjF8RtI4hY7GgtXxd2m8KOI4j2nDg4fKfkZcMvpuOCeXlzF5umSerKxyOkisaF0L5bVvBsj23lWuw6ImSmcHH900RxvwVknX

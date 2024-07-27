@@ -1,21 +1,57 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- */
-
 package com.mukesh.ecommerce.client;
-import com.sun.jersey.api.client.Client;
-import com.sun.jersey.api.client.WebResource;
-/**
- *
- * @author ermuk
- */
+
+import jakarta.ws.rs.client.Client;
+import jakarta.ws.rs.client.ClientBuilder;
+import jakarta.ws.rs.client.Entity;
+import jakarta.ws.rs.core.Form;
+import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Response;
+
 public class EcommerceClient {
 
-    public static void main(String[] args) {
-        Client client = Client.create();
-        WebResource webResource = client.resource("http://localhost:8080/ECommerce-Rest");
+    private static final String BASE_URL = "http://localhost:9090/ECommerce-Rest/resources";
 
-        String response = webResource.get(String.class);
-        System.out.println("Response from server: " + response);
+    public static void main(String[] args) {
+        try {
+            Client client = ClientBuilder.newClient();
+
+            performCheckout(client);
+            getProducts(client);
+
+            client.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void performCheckout(Client client) {
+        String checkoutEndpoint = BASE_URL + "/checkout/create-payment-intent";
+
+        FormData formData = new FormData("Sample Item", 100.0);
+
+        Form form = new Form();
+        form.param("itemName", formData.getItemName());
+        form.param("itemPrice", String.valueOf(formData.getItemPrice()));
+
+        Response response = client.target(checkoutEndpoint)
+                .request(MediaType.APPLICATION_FORM_URLENCODED)
+                .post(Entity.form(form));
+
+        if (response.getStatus() == Response.Status.OK.getStatusCode()) {
+            String jsonResponse = response.readEntity(String.class);
+            System.out.println("Checkout response: " + jsonResponse);
+        } else {
+            System.err.println("Error processing checkout: " + response.getStatusInfo());
+        }
+    }
+
+    private static void getProducts(Client client) {
+        String productsEndpoint = BASE_URL + "/products";
+
+        String jsonResponse = client.target(productsEndpoint)
+                .request(MediaType.APPLICATION_JSON)
+                .get(String.class);
+
+        System.out.println("Products: " + jsonResponse);
     }
 }

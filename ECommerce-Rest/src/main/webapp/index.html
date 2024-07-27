@@ -1,19 +1,989 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product List</title>
-    <!-- Include necessary CSS styles if any -->
-</head>
-<body>
-    <div id="colorsList" class="product-container">
-        <!-- Product cards will be dynamically added here -->
-    </div>
 
-    <!-- Include jQuery library -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- Include your custom JavaScript file -->
-    <script src="test.js"></script>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home</title>
+        <link rel="stylesheet" href="./owlcarasoul/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="./owlcarasoul/css/owl.theme.default.min.css">
+        <link rel="stylesheet" href="./css/main.css">
+        <link rel="stylesheet" href="./css/responsive.css">
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        
+
+    </head>
+
+    <body>
+        <header>
+            <nav class="ta-navbar-store">
+                <div class="ta-tab-nav-wrapper container-fluid">
+                    <div class="ta-tabbar-head-wrapper">
+                        <div class="ta-logo-catmix">
+                            <div class="ta-logowrapper">
+                                <div class="ta-logostore">
+                                    <a class="navbar-item ta-dH-logoFull" href="/">
+                                        <img src="./img/logo-01.png">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ta-category-wrapper">
+                            <div class="ta-cat-visible-wrapper">
+                                <div class="ta-category-icon">
+                                    <img src="./img/category.png">
+                                </div>
+                                <div class="ta-categoryname"><a href="*">Category</a></div>
+                            </div>
+                            <div class="ta-head-cat-hov">
+                                <div class="ta-head-cat-only">
+                                    <div class="ta-head-cat-list">
+                                        <a class="ta-filterCategory" href="#">
+                                            <div class="ta-head-cat-nlist">Men's Fashion</div>
+                                        </a>
+
+                                        <div class="ta-head-cathover">
+                                            <a class="ta-filterCategory">
+                                                <div class="ta-head-scat-list">
+                                                    <div class="ta-head-hovtext ta-category-nlist">SweetShirt &amp; Hoddies
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="ta-head-cat-list">
+                                        <a class="ta-filterCategory" href="#">
+                                            <div class="ta-head-cat-nlist">Electronics</div>
+                                        </a>
+                                    </div>
+                                    <div class="ta-head-cat-list">
+                                        <a class="ta-filterCategory" href="#">
+                                            <div class="ta-head-cat-nlist">Women's Fashion</div>
+                                        </a>
+
+                                        <div class="ta-head-cathover">
+
+                                            <a class="ta-filterCategory" href="#">
+                                                <div class="ta-head-scat-list">
+                                                    <div class="ta-head-hovtext ta-category-nlist">Coats &amp; Jackets</div>
+                                                </div>
+                                            </a>
+                                            <a class="ta-filterCategory" href="#">
+                                                <div class="ta-head-scat-list">
+                                                    <div class="ta-head-hovtext ta-category-nlist">Beauty And Fragrance
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ta-navbar-search">
+
+                            <div class="ta-searchbar">
+                                <div class="ta-textplace">
+                                    <input type="search" placeholder="Search Products..">
+                                </div>
+                                <div class="ta-searchbox-icon"><i class="fas fa-search"></i></div>
+                            </div>
+                        </div>
+
+                        <div class="ta-cart-wish-mix">
+
+                            <div class="ta-shopping-purchase">
+                                <div class="ta-cartwishbox">
+                                    <div class="ta-carthov-design">
+                                        <div class="ta-cartwishbox">
+                                            <a href="mycart.html">
+                                                <div class="ta-wishlist">My Cart</div>
+                                                <div class="ta-wishicon">
+                                                    <img src="./img/shopping.png">
+                                                </div>
+                                                <div class="ta-cartnumber" data-count="3"
+                                                     id="cartNumber">0</div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="ta-login-register" id="advancelogin">
+                                <div class="ta-loginmaster">
+                                    <a href="/login/en-US">
+                                        <div class="ta-login">LOGIN</div>
+                                    </a>
+                                </div>
+                                <div class="ta-login-user">
+                                    <div class="ta-tab-loginbox">
+                                        <img src="img/avatar.png">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ta-fhamburger-parent">
+                                <div class="fhamburger"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+
+        <section class="ta-store-banner">
+            <div id="banner" class="ta-mBanner-wrapper owl-carousel owl-theme">
+                <div class="item">
+                    <img src="./image/Banner/e7b40c1b2a494248.webp" alt="Owl Image">
+                </div>
+                <div class="item">
+                    <img src="./image/Banner/e28fb2d7c8002d84.webp" alt="Owl Image">
+                </div>
+            </div>
+
+        </section>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                var owl = $('#banner');
+                owl.owlCarousel({
+                    autoplay: 5000,
+                    margin: 10,
+                    nav: true,
+                    dots: false,
+                    loop: true,
+                    mouseDrag: true,
+                    navText: ['<span class="fa fa-chevron-left fa-2x"></span>', '<span class="fa fa-chevron-right fa-2x"></span>'],
+                    responsive: {
+                        0: {
+                            items: 1
+                        },
+                        600: {
+                            items: 1
+                        },
+                        1000: {
+                            items: 1
+                        }
+                    }
+                })
+
+            });
+
+        </script>
+
+        <section class="ta-secure-section">
+            <div class="ta-securebox container-fluid">
+                <div class="ta-available-box">
+                    <div class="ta-secure-box-wrap">
+                        <div class="ta-availableall">
+                            <div class="ta-photoforsecure">
+                                <img src="./img/24-hours.png">
+                            </div>
+                            <div class="ta-availabletext">
+                                <div class="ta-securetext">
+                                    We are Available for 24/7 for help center
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ta-availableall">
+                            <div class="ta-photoforsecure">
+                                <img src="./img/shipped.png">
+                            </div>
+                            <div class="ta-availabletext">
+                                <div class="ta-securetext">
+                                    Express Delivery On Orders over Nepal
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ta-secure-box-wrap">
+                        <div class="ta-availableall">
+                            <div class="ta-photoforsecure">
+                                <img src="./img/verified.png">
+                            </div>
+                            <div class="ta-availabletext">
+                                <div class="ta-securetext">
+                                    We Provide top Quality Products for you
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ta-availableall">
+                            <div class="ta-photoforsecure">
+                                <img src="./img/accept.png">
+                            </div>
+                            <div class="ta-availabletext">
+                                <div class="ta-securetext">
+                                    We Promote the Security of your Information
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <section class="ta-main-title-section">
+            <div class="ta-productswrapper container-fluid">
+                <div class="ta-maintitle-wrapper">
+                    <div class="ta-main-title">Hot Sales</div>
+
+                    <div class="ta-viewmore-wrapper">
+                        <div class="ta-viewmore-button">View More</div>
+                    </div>
+                </div>
+
+                <div class="ta-flashsale">
+                    <div class="ta-price-cart-all owl-carousel owl-theme ta-product-owl" id="product-item">
+                        
+                        <div id="product-list">
+                            
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="ta-all-brands-section">
+            <div class="ta-brandswrapper container-fluid">
+                <div class="ta-brand-product-wrapper">
+                    <div class="ta-brandtitle-wrapper">
+                        <div class="ta-brand-title">Brands</div>
+                    </div>
+                </div>
+                <div class="ta-brands-collection owl-carousel owl-theme ta-brandslider-owl">
+                    <div class="ta-brands-all">
+                        <div class="ta-brands-photo">
+                            <img src="./image/brands/adidas.jpg">
+                        </div>
+                        <div class="ta-brands-name">
+                            <div class="ta-brands-tname">adidas</div>
+                        </div>
+                    </div>
+                    <div class="ta-brands-all">
+                        <div class="ta-brands-photo">
+                            <img src="./image/brands/audi.jpeg">
+                        </div>
+                        <div class="ta-brands-name">
+                            <div class="ta-brands-tname">audi</div>
+                        </div>
+                    </div>
+                    <div class="ta-brands-all">
+                        <div class="ta-brands-photo">
+                            <img src="./image/brands/bmw.jpg">
+                        </div>
+                        <div class="ta-brands-name">
+                            <div class="ta-brands-tname">BMW</div>
+                        </div>
+                    </div>
+                    <div class="ta-brands-all">
+                        <div class="ta-brands-photo">
+                            <img src="./image/brands/goldstars.jpg">
+                        </div>
+                        <div class="ta-brands-name">
+                            <div class="ta-brands-tname">Gold Stars</div>
+                        </div>
+                    </div>
+                    <div class="ta-brands-all">
+                        <div class="ta-brands-photo">
+                            <img src="./image/brands/ktmcty.png">
+                        </div>
+                        <div class="ta-brands-name">
+                            <div class="ta-brands-tname">KTM City</div>
+                        </div>
+                    </div>
+                    <div class="ta-brands-all">
+                        <div class="ta-brands-photo">
+                            <img src="./image/brands/Logo-2.0.png">
+                        </div>
+                        <div class="ta-brands-name">
+                            <div class="ta-brands-tname">Title</div>
+                        </div>
+                    </div>
+                    <div class="ta-brands-all">
+                        <div class="ta-brands-photo">
+                            <img src="./image/brands/uggirls.png">
+                        </div>
+                        <div class="ta-brands-name">
+                            <div class="ta-brands-tname">UG Girls</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('.ta-brandslider-owl').owlCarousel({
+                    autoplay: true,
+                    nav: false,
+                    loop: true,
+                    mouseDrag: false,
+                    dots: false,
+                    margin: 10,
+                    autoplayHoverPause: true,
+                    responsive: {
+                        0: {
+                            items: 2
+                        },
+                        750: {
+                            items: 4
+                        },
+                        1080: {
+                            items: 5,
+                        },
+                        1600: {
+                            items: 7,
+                        }
+                    }
+                });
+            });
+        </script>
+        <section class="ta-main-title-section">
+            <div class="ta-productswrapper container-fluid">
+                <div class="ta-maintitle-wrapper">
+                    <div class="ta-main-title">Men's</div>
+
+                    <div class="ta-viewmore-wrapper">
+                        <div class="ta-viewmore-button">View More</div>
+                    </div>
+                </div>
+
+                <div class="ta-flashsale">
+                    <div class="ta-price-cart-all owl-carousel owl-theme ta-product-owl" id="product-item1">
+                        <div class="ta-pricecartwrapper">
+                            <div class="ta-photo-product">
+                                <a>
+                                    <img
+                                        src="./image/product/6d49bd1eb4baf6161f882b256371162c.jpg_400x400q75-product.jpg_.jpg" />
+                                </a>
+                            </div>
+
+                            <div class="ta-priceofproduct">
+                                <div class="ta-now-price">Rs 1400</div>
+                            </div>
+
+                            <div class="ta-productdetails">
+                                <div class="ta-titleof-product">title</div>
+                            </div>
+
+                            <div class="ta-cart-wishlist">
+                                <div class="ta-cartbox btnAddtoCard">Add to Cart</div>
+
+                                <div class="ta-wishlist">Buy Now</div>
+                            </div>
+                        </div>
+                        <div class="ta-pricecartwrapper">
+                            <div class="ta-photo-product">
+                                <a>
+                                    <img
+                                        src="./image/product/6d49bd1eb4baf6161f882b256371162c.jpg_400x400q75-product.jpg_.jpg" />
+                                </a>
+                            </div>
+
+                            <div class="ta-priceofproduct">
+                                <div class="ta-now-price">Rs 1400</div>
+                            </div>
+
+                            <div class="ta-productdetails">
+                                <div class="ta-titleof-product">title</div>
+                            </div>
+
+                            <div class="ta-cart-wishlist">
+                                <div class="ta-cartbox btnAddtoCard">Add to Cart</div>
+
+                                <div class="ta-wishlist">Buy Now</div>
+                            </div>
+                        </div>
+                        <div class="ta-pricecartwrapper">
+                            <div class="ta-photo-product">
+                                <a>
+                                    <img
+                                        src="./image/product/6d49bd1eb4baf6161f882b256371162c.jpg_400x400q75-product.jpg_.jpg" />
+                                </a>
+                            </div>
+
+                            <div class="ta-priceofproduct">
+                                <div class="ta-now-price">Rs 1400</div>
+                            </div>
+
+                            <div class="ta-productdetails">
+                                <div class="ta-titleof-product">title</div>
+                            </div>
+
+                            <div class="ta-cart-wishlist">
+                                <div class="ta-cartbox btnAddtoCard">Add to Cart</div>
+
+                                <div class="ta-wishlist">Buy Now</div>
+                            </div>
+                        </div>
+                        <div class="ta-pricecartwrapper">
+                            <div class="ta-photo-product">
+                                <a>
+                                    <img
+                                        src="./image/product/6d49bd1eb4baf6161f882b256371162c.jpg_400x400q75-product.jpg_.jpg" />
+                                </a>
+                            </div>
+
+                            <div class="ta-priceofproduct">
+                                <div class="ta-now-price">Rs 1400</div>
+                            </div>
+
+                            <div class="ta-productdetails">
+                                <div class="ta-titleof-product">title</div>
+                            </div>
+
+                            <div class="ta-cart-wishlist">
+                                <div class="ta-cartbox btnAddtoCard">Add to Cart</div>
+
+                                <div class="ta-wishlist">Buy Now</div>
+                            </div>
+                        </div>
+                        <div class="ta-pricecartwrapper">
+                            <div class="ta-photo-product">
+                                <a>
+                                    <img
+                                        src="./image/product/6d49bd1eb4baf6161f882b256371162c.jpg_400x400q75-product.jpg_.jpg" />
+                                </a>
+                            </div>
+
+                            <div class="ta-priceofproduct">
+                                <div class="ta-now-price">Rs 1400</div>
+                            </div>
+
+                            <div class="ta-productdetails">
+                                <div class="ta-titleof-product">title</div>
+                            </div>
+
+                            <div class="ta-cart-wishlist">
+                                <div class="ta-cartbox btnAddtoCard">Add to Cart</div>
+
+                                <div class="ta-wishlist">Buy Now</div>
+                            </div>
+                        </div>
+                        <div class="ta-pricecartwrapper">
+                            <div class="ta-photo-product">
+                                <a>
+                                    <img
+                                        src="./image/product/6d49bd1eb4baf6161f882b256371162c.jpg_400x400q75-product.jpg_.jpg" />
+                                </a>
+                            </div>
+
+                            <div class="ta-priceofproduct">
+                                <div class="ta-now-price">Rs 1400</div>
+                            </div>
+
+                            <div class="ta-productdetails">
+                                <div class="ta-titleof-product">title</div>
+                            </div>
+
+                            <div class="ta-cart-wishlist">
+                                <div class="ta-cartbox btnAddtoCard">Add to Cart</div>
+
+                                <div class="ta-wishlist">Buy Now</div>
+                            </div>
+                        </div>
+                        <div class="ta-pricecartwrapper">
+                            <div class="ta-photo-product">
+                                <a>
+                                    <img
+                                        src="./image/product/6d49bd1eb4baf6161f882b256371162c.jpg_400x400q75-product.jpg_.jpg" />
+                                </a>
+                            </div>
+
+                            <div class="ta-priceofproduct">
+                                <div class="ta-now-price">Rs 1400</div>
+                            </div>
+
+                            <div class="ta-productdetails">
+                                <div class="ta-titleof-product">title</div>
+                            </div>
+
+                            <div class="ta-cart-wishlist">
+                                <div class="ta-cartbox btnAddtoCard">Add to Cart</div>
+
+                                <div class="ta-wishlist">Buy Now</div>
+                            </div>
+                        </div>
+                        <div class="ta-pricecartwrapper">
+                            <div class="ta-photo-product">
+                                <a>
+                                    <img
+                                        src="./image/product/6d49bd1eb4baf6161f882b256371162c.jpg_400x400q75-product.jpg_.jpg" />
+                                </a>
+                            </div>
+
+                            <div class="ta-priceofproduct">
+                                <div class="ta-now-price">Rs 1400</div>
+                            </div>
+
+                            <div class="ta-productdetails">
+                                <div class="ta-titleof-product">title</div>
+                            </div>
+
+                            <div class="ta-cart-wishlist">
+                                <div class="ta-cartbox btnAddtoCard">Add to Cart</div>
+
+                                <div class="ta-wishlist">Buy Now</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="ta-main-title-section">
+            <div class="ta-productswrapper container-fluid">
+                <div class="ta-maintitle-wrapper">
+                    <div class="ta-main-title">Women's</div>
+
+                    <div class="ta-viewmore-wrapper">
+                        <div class="ta-viewmore-button">View More</div>
+                    </div>
+                </div>
+
+                <div class="ta-flashsale">
+                    <div class="ta-price-cart-all owl-carousel owl-theme ta-product-owl" id="product-item2">
+                        <div class="ta-pricecartwrapper">
+                            <div class="ta-photo-product">
+                                <a>
+                                    <img
+                                        src="./image/product/6d49bd1eb4baf6161f882b256371162c.jpg_400x400q75-product.jpg_.jpg" />
+                                </a>
+                            </div>
+
+                            <div class="ta-priceofproduct">
+                                <div class="ta-now-price">Rs 1400</div>
+                            </div>
+
+                            <div class="ta-productdetails">
+                                <div class="ta-titleof-product">title</div>
+                            </div>
+
+                            <div class="ta-cart-wishlist">
+                                <div class="ta-cartbox btnAddtoCard">Add to Cart</div>
+
+                                <div class="ta-wishlist">Buy Now</div>
+                            </div>
+                        </div>
+                        <div class="ta-pricecartwrapper">
+                            <div class="ta-photo-product">
+                                <a>
+                                    <img
+                                        src="./image/product/6d49bd1eb4baf6161f882b256371162c.jpg_400x400q75-product.jpg_.jpg" />
+                                </a>
+                            </div>
+
+                            <div class="ta-priceofproduct">
+                                <div class="ta-now-price">Rs 1400</div>
+                            </div>
+
+                            <div class="ta-productdetails">
+                                <div class="ta-titleof-product">title</div>
+                            </div>
+
+                            <div class="ta-cart-wishlist">
+                                <div class="ta-cartbox btnAddtoCard">Add to Cart</div>
+
+                                <div class="ta-wishlist">Buy Now</div>
+                            </div>
+                        </div>
+                        <div class="ta-pricecartwrapper">
+                            <div class="ta-photo-product">
+                                <a>
+                                    <img
+                                        src="./image/product/6d49bd1eb4baf6161f882b256371162c.jpg_400x400q75-product.jpg_.jpg" />
+                                </a>
+                            </div>
+
+                            <div class="ta-priceofproduct">
+                                <div class="ta-now-price">Rs 1400</div>
+                            </div>
+
+                            <div class="ta-productdetails">
+                                <div class="ta-titleof-product">title</div>
+                            </div>
+
+                            <div class="ta-cart-wishlist">
+                                <div class="ta-cartbox btnAddtoCard">Add to Cart</div>
+
+                                <div class="ta-wishlist">Buy Now</div>
+                            </div>
+                        </div>
+                        <div class="ta-pricecartwrapper">
+                            <div class="ta-photo-product">
+                                <a>
+                                    <img
+                                        src="./image/product/6d49bd1eb4baf6161f882b256371162c.jpg_400x400q75-product.jpg_.jpg" />
+                                </a>
+                            </div>
+
+                            <div class="ta-priceofproduct">
+                                <div class="ta-now-price">Rs 1400</div>
+                            </div>
+
+                            <div class="ta-productdetails">
+                                <div class="ta-titleof-product">title</div>
+                            </div>
+
+                            <div class="ta-cart-wishlist">
+                                <div class="ta-cartbox btnAddtoCard">Add to Cart</div>
+
+                                <div class="ta-wishlist">Buy Now</div>
+                            </div>
+                        </div>
+                        <div class="ta-pricecartwrapper">
+                            <div class="ta-photo-product">
+                                <a>
+                                    <img
+                                        src="./image/product/6d49bd1eb4baf6161f882b256371162c.jpg_400x400q75-product.jpg_.jpg" />
+                                </a>
+                            </div>
+
+                            <div class="ta-priceofproduct">
+                                <div class="ta-now-price">Rs 1400</div>
+                            </div>
+
+                            <div class="ta-productdetails">
+                                <div class="ta-titleof-product">title</div>
+                            </div>
+
+                            <div class="ta-cart-wishlist">
+                                <div class="ta-cartbox btnAddtoCard">Add to Cart</div>
+
+                                <div class="ta-wishlist">Buy Now</div>
+                            </div>
+                        </div>
+                        <div class="ta-pricecartwrapper">
+                            <div class="ta-photo-product">
+                                <a>
+                                    <img
+                                        src="./image/product/6d49bd1eb4baf6161f882b256371162c.jpg_400x400q75-product.jpg_.jpg" />
+                                </a>
+                            </div>
+
+                            <div class="ta-priceofproduct">
+                                <div class="ta-now-price">Rs 1400</div>
+                            </div>
+
+                            <div class="ta-productdetails">
+                                <div class="ta-titleof-product">title</div>
+                            </div>
+
+                            <div class="ta-cart-wishlist">
+                                <div class="ta-cartbox btnAddtoCard">Add to Cart</div>
+
+                                <div class="ta-wishlist">Buy Now</div>
+                            </div>
+                        </div>
+                        <div class="ta-pricecartwrapper">
+                            <div class="ta-photo-product">
+                                <a>
+                                    <img
+                                        src="./image/product/6d49bd1eb4baf6161f882b256371162c.jpg_400x400q75-product.jpg_.jpg" />
+                                </a>
+                            </div>
+
+                            <div class="ta-priceofproduct">
+                                <div class="ta-now-price">Rs 1400</div>
+                            </div>
+
+                            <div class="ta-productdetails">
+                                <div class="ta-titleof-product">title</div>
+                            </div>
+
+                            <div class="ta-cart-wishlist">
+                                <div class="ta-cartbox btnAddtoCard">Add to Cart</div>
+
+                                <div class="ta-wishlist">Buy Now</div>
+                            </div>
+                        </div>
+                        <div class="ta-pricecartwrapper">
+                            <div class="ta-photo-product">
+                                <a>
+                                    <img
+                                        src="./image/product/6d49bd1eb4baf6161f882b256371162c.jpg_400x400q75-product.jpg_.jpg" />
+                                </a>
+                            </div>
+
+                            <div class="ta-priceofproduct">
+                                <div class="ta-now-price">Rs 1400</div>
+                            </div>
+
+                            <div class="ta-productdetails">
+                                <div class="ta-titleof-product">title</div>
+                            </div>
+
+                            <div class="ta-cart-wishlist">
+                                <div class="ta-cartbox btnAddtoCard">Add to Cart</div>
+
+                                <div class="ta-wishlist">Buy Now</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="ta-my-e-commerce container-fluid">
+                <div class="ta-myfooter-wrapper">
+                    <div class="ta-quicklinks">
+                        <div class="ta-quick-title-wrapper">
+                            <div class="ta-quick-title">Customer Care</div>
+                        </div>
+
+                        <div class="ta-quicklinks-details">
+                            <div class="ta-quick-lists">
+                                <div class="ta-listtext"><a>Help Center</a></div>
+                            </div>
+
+                            <div class="ta-quick-lists">
+                                <div class="ta-listtext"><a>How to Buy</a></div>
+                            </div>
+
+                            <div class="ta-quick-lists">
+                                <div class="ta-listtext"><a>Returns &amp; Refunds</a></div>
+                            </div>
+
+                            <div class="ta-quick-lists">
+                                <div class="ta-listtext"><a>Code of Conduct</a></div>
+                            </div>
+
+                            <div class="ta-quick-lists">
+                                <div class="ta-listtext"><a>Digital Payments</a></div>
+                            </div>
+
+                            <div class="ta-quick-lists">
+                                <div class="ta-listtext"><a>Shipping Policies</a></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ta-quicklinks">
+                        <div class="ta-quick-title-wrapper">
+                            <div class="ta-quick-title">Quicklinks</div>
+                        </div>
+
+                        <div class="ta-quicklinks-details">
+                            <div class="ta-quick-lists">
+                                <div class="ta-listtext"><a>New Arrivals</a></div>
+                            </div>
+
+                            <div class="ta-quick-lists">
+                                <div class="ta-listtext"><a>Best Selling Items</a></div>
+                            </div>
+
+                            <div class="ta-quick-lists">
+                                <div class="ta-listtext"><a>Flash Sale</a></div>
+                            </div>
+
+                            <div class="ta-quick-lists">
+                                <div class="ta-listtext"><a>Fashion &amp; Styles</a></div>
+                            </div>
+
+                            <div class="ta-quick-lists">
+                                <div class="ta-listtext"><a>Mobiles &amp; Laptops</a></div>
+                            </div>
+
+                            <div class="ta-quick-lists">
+                                <div class="ta-listtext ta-footer-link"><a href="#">Vendor Register</a></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ta-quicklinks">
+                        <div class="ta-quick-title-wrapper">
+                            <div class="ta-quick-title">About</div>
+                        </div>
+
+                        <div class="ta-quicklinks-details">
+                            <div class="ta-quick-lists">
+                                <div class="ta-listtext"><a>About Us</a></div>
+                            </div>
+
+                            <div class="ta-quick-lists">
+                                <div class="ta-listtext"><a>Payment Option</a></div>
+                            </div>
+
+                            <div class="ta-quick-lists">
+                                <div class="ta-listtext"><a>Career</a></div>
+                            </div>
+
+                            <div class="ta-quick-lists">
+                                <div class="ta-listtext"><a>Policies &amp; Rules</a></div>
+                            </div>
+
+                            <div class="ta-quick-lists">
+                                <div class="ta-listtext"><a>Contact Us</a></div>
+                            </div>
+
+                            <div class="ta-quick-lists">
+                                <div class="ta-listtext"><a>Service Center</a></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ta-quicklinks">
+                        <div class="ta-quick-title-wrapper">
+                            <div class="ta-quick-title">Contact Us</div>
+                        </div>
+
+                        <div class="ta-quicklinks-details">
+                            <div class="ta-quick-address"><i class="fas fa-map-marker-alt"></i>Tokyo, Japan</div>
+
+                            <div class="ta-quick-address"><i class="fas fa-phone-alt"></i> +977-9864221030</div>
+
+                            <div class="ta-quick-address"><i class="fas fa-envelope"></i> info@gmail.com</div>
+                        </div>
+
+                        <div class="ta-social-sites">
+                            <div class="ta-socials-sites-all"><i class="fab fa-facebook-f"></i></div>
+
+                            <div class="ta-socials-sites-all"><i class="fab fa-instagram"></i></div>
+
+                            <div class="ta-socials-sites-all"><i class="fab fa-twitter"></i></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ta-copyright-section">
+                    <div class="ta-left-all-copyright">
+                        <div class="ta-copyright-left">Company Name Copyright <i class="fas fa-copyright"></i> 2024. All
+                            Right Reserved.</div>
+                    </div>
+
+                    <div class="ta-we-accept">
+                        <div class="ta-accept-photo"><img src="./image/payment/cashon.png" /></div>
+
+                        <div class="ta-accept-photo"><img src="./image/payment/E sewa.png" /></div>
+
+                        <div class="ta-accept-photo"><img src="./image/payment/Khalti-logo-1-1024x571.jpg" /></div>
+
+                        <div class="ta-accept-photo"><img src="./image/payment/imepay.jpg" /></div>
+
+                        <div class="ta-accept-photo"><img src="./image/payment/Visa-Logo-2000-2006.png" /></div>
+
+                        <div class="ta-accept-photo"><img src="./image/payment/Mastercard-1200x600.jpg" /></div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('#product-item').owlCarousel({
+                    autoplay: false,
+                    nav: true,
+                    loop: false,
+                    mouseDrag: true,
+                    dots: false,
+                    autoplayHoverPause: true,
+                    responsive: {
+                        0: {
+                            items: 2
+                        },
+                        576: {
+                            items: 3
+                        },
+                        960: {
+                            items: 4,
+                            slideBy: 4
+                        },
+                        1216: {
+                            items: 5,
+                            slideBy: 5
+                        },
+                        1408: {
+                            items: 6,
+                            slideBy: 6
+                        },
+                        1600: {
+                            items: 7,
+                            slideBy: 7
+                        }
+                    }
+                });
+            });
+        </script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('#product-item1').owlCarousel({
+                    autoplay: false,
+                    nav: true,
+                    loop: false,
+                    mouseDrag: true,
+                    dots: false,
+                    autoplayHoverPause: true,
+                    responsive: {
+                        0: {
+                            items: 2
+                        },
+                        576: {
+                            items: 3
+                        },
+                        960: {
+                            items: 4,
+                            slideBy: 4
+                        },
+                        1216: {
+                            items: 5,
+                            slideBy: 5
+                        },
+                        1408: {
+                            items: 6,
+                            slideBy: 6
+                        },
+                        1600: {
+                            items: 7,
+                            slideBy: 7
+                        }
+                    }
+                });
+            });
+        </script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('#product-item2').owlCarousel({
+                    autoplay: false,
+                    nav: true,
+                    loop: false,
+                    mouseDrag: true,
+                    dots: false,
+                    autoplayHoverPause: true,
+                    responsive: {
+                        0: {
+                            items: 2
+                        },
+                        576: {
+                            items: 3
+                        },
+                        960: {
+                            items: 4,
+                            slideBy: 4
+                        },
+                        1216: {
+                            items: 5,
+                            slideBy: 5
+                        },
+                        1408: {
+                            items: 6,
+                            slideBy: 6
+                        },
+                        1600: {
+                            items: 7,
+                            slideBy: 7
+                        }
+                    }
+                });
+            });
+        </script>
+        <script src="https://kit.fontawesome.com/47d2c2e237.js" crossorigin="anonymous"></script>
+        <script src="./js/owl.carousel.min.js"></script>
+        <script src="product.js"></script>
+        
+
+    </body>
+
 </html>
