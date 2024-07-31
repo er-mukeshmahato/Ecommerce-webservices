@@ -52,7 +52,6 @@ public class CheckoutService {
 
             return responseData;
         } catch (StripeException e) {
-            e.printStackTrace();
             throw new WebApplicationException("Error creating payment intent: " + e.getMessage(), Response.Status.INTERNAL_SERVER_ERROR);
         }
     }
