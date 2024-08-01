@@ -29,14 +29,15 @@ public class PaymentService {
         String email="er.mukeshmahatomm@gmail.com";
 
         try {
+            
             // Calculate the total order amount based on items
             int orderAmount = calculateOrderAmount(createPayment.getItems());
 
             // Create PaymentIntent parameters
             PaymentIntentCreateParams.Builder builder = new PaymentIntentCreateParams.Builder()
                     .setCurrency("usd")
-                    .setAmount((long) orderAmount * 100);  // Amount should be in cents
-
+                    .setAmount((long) orderAmount * 100)  // Amount should be in cents
+                    .setCustomer(email);
             // Optionally, add receipt email
             builder.putMetadata("receipt_email", email);
 
@@ -68,6 +69,7 @@ public class PaymentService {
     static class CreatePaymentItem {
         @SerializedName("id")
         String id;
+        
 
         public String getId() {
             return id;

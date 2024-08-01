@@ -9,6 +9,21 @@ public class CartModel {
     private String productName;
     private String emailId;
 
+    // Default constructor
+    public CartModel() {
+    }
+
+    // All-argument constructor
+    public CartModel(String userId, String productId, int quantity, String price, String imageUrl, String productName, String emailId) {
+        this.userId = userId;
+        this.productId = productId;
+        this.quantity = quantity;
+        this.price = price;
+        this.imageUrl = imageUrl;
+        this.productName = productName;
+        this.emailId = emailId;
+    }
+
     // Getters and setters
     public String getUserId() {
         return userId;

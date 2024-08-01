@@ -3,7 +3,7 @@ $(document).ready(function () {
 // Function to fetch products data from the web service
     function fetchProducts() {
         $.ajax({
-            url: "resources/product", // Endpoint to fetch JSON data from
+            url: "http://localhost:9090/Product-services/resources/product", // Endpoint to fetch JSON data from
             type: "GET",
             success: function (data) {
                 // Process the JSON response
